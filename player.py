@@ -20,6 +20,7 @@ class Player(commands.Cog):
         if len(self.song_queue[ctx.guild.id]) > 0:
             await self.play_song(ctx, self.song_queue[ctx.guild.id][0])
             self.song_queue[ctx.guild.id].pop(0)
+        #empty song queue location?
 
     async def search_song(self, amount, song, get_url=False):
         info = await self.bot.loop.run_in_executor(None, lambda: youtube_dl.YoutubeDL({"format" : "bestaudio", "quiet" : True}).extract_info(f"ytsearch{amount}:{song}", download=False, ie_key="YoutubeSearch"))
@@ -31,6 +32,7 @@ class Player(commands.Cog):
         url = pafy.new(song).getbestaudio().url
         ctx.voice_client.play(discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(url)), after=lambda error: self.bot.loop.create_task(self.check_queue(ctx)))
         ctx.voice_client.source.volume = 0.5
+        #empty song queue location?
 
     @commands.command()
     async def join(self,ctx):
@@ -79,6 +81,7 @@ class Player(commands.Cog):
                 return await ctx.send("You're overloading me! Calm down and wait for the current song to end.")
 
         await self.play_song(ctx, song)
+        #empty song queue location?
         await ctx.send(f"Now playing: {song}")
 
     @commands.command()
