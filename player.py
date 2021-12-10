@@ -1,12 +1,10 @@
-<<<<<<< HEAD
 """
 This is compressed into one file.
 """
 
 #HELLO. I AM UPDATED VIA GIT. AGAIN.
 
-=======
->>>>>>> 19559c387b1f74c3ef6e112c790746a80c86b3a8
+
 import asyncio
 import youtube_dl
 import pafy
