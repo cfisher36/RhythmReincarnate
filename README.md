@@ -1,3 +1,3 @@
-# Discord Bots
+# Rhythm Reincarnate
 
-Currently only supports streaming music from Youtube.
+Currently only supports streaming music from YouTube.
